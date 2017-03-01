@@ -1,5 +1,0 @@
-创建线程的三种种方式
-
-Thread
-Runnable
-Callable
