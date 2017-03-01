@@ -1,4 +1,4 @@
-package mq.activitymq;
+package activitymq;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
