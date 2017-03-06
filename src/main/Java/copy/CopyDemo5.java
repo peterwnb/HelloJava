@@ -5,9 +5,15 @@ package copy;
  */
 public class CopyDemo5 {
     public static void main(String[] args) {
-        CopyDemo5 copyDemo5 = new CopyDemo5();
-        CopyDemo5 copyDemo = copyDemo5;
-        System.out.println(copyDemo == copyDemo5);
+        User user = new User();
+        user.setAddress(new Address("beijing"));
+
+        User cpUser = CloneUtils.clone(user);
+
+        cpUser.setAddress(new Address("shanghai"));
+
+        System.out.println("user: "+user.getAddress().getCity());
+        System.out.println("cpUser: "+cpUser.getAddress().getCity());
 
 
     }
