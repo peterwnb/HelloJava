@@ -1,4 +1,4 @@
-package socket;
+package socket.tcp;
 
 import java.io.*;
 import java.net.Socket;
@@ -15,20 +15,20 @@ public class ServerThread extends Thread {
     }
 
     //线程执行的操作，响应客户端的请求
-    public void run(){
-        InputStream is=null;
-        InputStreamReader isr=null;
-        BufferedReader br=null;
-        OutputStream os=null;
-        PrintWriter pw=null;
+    public void run() {
+        InputStream is = null;
+        InputStreamReader isr = null;
+        BufferedReader br = null;
+        OutputStream os = null;
+        PrintWriter pw = null;
         try {
             //获取输入流，并读取客户端信息
             is = socket.getInputStream();
             isr = new InputStreamReader(is);
             br = new BufferedReader(isr);
-            String info=null;
-            while((info=br.readLine())!=null){//循环读取客户端的信息
-                System.out.println("我是服务器，客户端说："+info);
+            String info = null;
+            while ((info = br.readLine()) != null) {//循环读取客户端的信息
+                System.out.println("我是服务器，客户端说：" + info);
             }
             socket.shutdownInput();//关闭输入流
             //获取输出流，响应客户端的请求
@@ -39,20 +39,20 @@ public class ServerThread extends Thread {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }finally{
+        } finally {
             //关闭资源
             try {
-                if(pw!=null)
+                if (pw != null)
                     pw.close();
-                if(os!=null)
+                if (os != null)
                     os.close();
-                if(br!=null)
+                if (br != null)
                     br.close();
-                if(isr!=null)
+                if (isr != null)
                     isr.close();
-                if(is!=null)
+                if (is != null)
                     is.close();
-                if(socket!=null)
+                if (socket != null)
                     socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
