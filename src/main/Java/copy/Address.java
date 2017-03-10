@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by zzqno on 2017-3-6.
+ * 实现拷贝 必须实现Cloneable 重写clone方法
  */
 public class Address implements Cloneable,Serializable{
 
@@ -33,5 +34,9 @@ public class Address implements Cloneable,Serializable{
             e.printStackTrace();
         }
         return address;
+    }
+
+    public static void main(String[] args) {
+        Address address = (Address) new Address().clone();
     }
 }

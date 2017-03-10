@@ -15,7 +15,9 @@ public class CopyDemo3 {
         user.setAddress(address);
 
         User cpUser = (User) user.clone();
+        //cpUser.setAddress(new Address("shengzhen"));
         cpUser.getAddress().setCity("beijing");
+
 
         System.out.println(address == cpUser.getAddress()); //true
         System.out.println("user address:"+user.getAddress().getCity());//beijing
