@@ -5,21 +5,26 @@
     <title>Title</title>
     <script language="javascript" type="text/javascript">
         var echo_webscoket;
+
         function init() {
             output = document.getElementById("output");
         }
+
         function send_echo() {
             var wsUri = "ws://localhost:8080/echo";
             wirteToScreen(" Connection to " + wsUri);
             echo_webscoket = new WebSocket(wsUri);
+
             echo_webscoket.open = function (evt) {
                 wirteToScreen("Connected!")
                 doSend(textID.value);
             };
+
             echo_webscoket.onmessage = function (evt) {
                 wirteToScreen("Received message:" + evt.data);
                 echo_webscoket.close();
             };
+
             echo_webscoket.onerror = function (evt) {
                 wirteToScreen('<span style = "color:red;">Error:</span>' + evt.data);
                 echo_webscoket.close();
