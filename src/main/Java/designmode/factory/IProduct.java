@@ -5,7 +5,7 @@ package designmode.factory;
  */
 public interface IProduct {
 
-    public void productMethod();
+     void productMethod();
 
 }
 
