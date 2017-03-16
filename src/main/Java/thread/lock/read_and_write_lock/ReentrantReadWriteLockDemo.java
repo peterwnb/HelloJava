@@ -1,4 +1,4 @@
-package thread.read_and_write_lock;
+package thread.lock.read_and_write_lock;
 
 import java.util.HashMap;
 import java.util.Map;
