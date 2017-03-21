@@ -7,6 +7,7 @@ import javax.jms.*;
 
 /**
  * Created by zzqno on 2017-3-15.
+ * 生产者
  */
 public class Producer {
 
@@ -32,15 +33,13 @@ public class Producer {
             session = connection.createSession(Boolean.TRUE, Session.AUTO_ACKNOWLEDGE); // 创建Session,第一个参数为是否开启事务
             Topic topic = session.createTopic("XPS-15-zzq.topic");
             TopicSubscriber subs = session.createDurableSubscriber(topic, "XPS-15-zzq.topic");
-            subs.setMessageListener(new MessageListener() {
-                @Override
-                public void onMessage(Message message) {
-                    TextMessage tm = (TextMessage) message;
-                    try {
-                        System.out.println("Received message: " + tm.getText());
-                    } catch (JMSException e) {
-                        e.printStackTrace();
-                    }
+
+            subs.setMessageListener((Message message) -> {
+                TextMessage tm = (TextMessage) message;
+                try {
+                    System.out.println("Received message: " + tm.getText());
+                } catch (JMSException e) {
+                    e.printStackTrace();
                 }
             });
             session.commit();

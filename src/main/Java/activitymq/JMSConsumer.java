@@ -42,6 +42,7 @@ public class JMSConsumer {
                 }
             }*/
             messageConsumer.setMessageListener(new MyListener());
+            session.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,6 +6,7 @@ import javax.jms.*;
 
 /**
  * Created by zzqno on 2017-3-15.
+ * 消费者
  */
 public class Consumer {
 
@@ -33,7 +34,6 @@ public class Consumer {
          textMsg.acknowledge();
          */
         Topic topic = session.createTopic("XPS-15-zzq.topic");
-
         MessageProducer producer = session.createProducer(topic);
         producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);//设置非持久化
 //          producer.setTimeToLive(5000);//5秒后过期，这个对点对点模式有效
