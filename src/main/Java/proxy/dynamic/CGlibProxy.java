@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by zzqno on 2017-3-27.
+ * CGlib实现的动态代理
  */
 public class CGlibProxy implements MethodInterceptor {
 
@@ -38,8 +39,10 @@ public class CGlibProxy implements MethodInterceptor {
     }
 
     public static void main(String[] args) {
+
         CGlibProxy proxy = new CGlibProxy();
         User user = proxy.getProxy(User.class);
         user.getUserID();
+        user.getUserName();
     }
 }

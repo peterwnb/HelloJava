@@ -11,12 +11,12 @@ import java.lang.reflect.Proxy;
  * Created by zzqno on 2017-3-27.
  * JDK动态代理实现
  */
-public class DynamicProxy  implements InvocationHandler {
+public class JdkProxy implements InvocationHandler {
 
     //被代理的目标对象
     private Object object;
 
-    public DynamicProxy(Object object){
+    public JdkProxy(Object object){
         this.object = object;
     }
 
@@ -42,7 +42,7 @@ public class DynamicProxy  implements InvocationHandler {
 
     public static void main(String[] args) {
         Hello hello = new HelloImpl();
-        DynamicProxy dynamicProxy = new DynamicProxy(hello);
+        JdkProxy dynamicProxy = new JdkProxy(hello);
       /*  Hello helloProxy = (Hello) Proxy.newProxyInstance(hello.getClass().getClassLoader(),hello.getClass().getInterfaces(),dynamicProxy);
         helloProxy.say("zzq");*/
         Hello helloProxy = dynamicProxy.getProxy();
