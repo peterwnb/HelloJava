@@ -24,6 +24,10 @@ public class CGlibProxy implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+        /**
+         * 如果要实现特定方法拦截
+         * 可在这里进行判断方法名
+         */
         before();
         methodProxy.invokeSuper(o, objects);
         after();

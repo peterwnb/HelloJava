@@ -26,6 +26,10 @@ public class JdkProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        /**
+         * 如果要实现特定方法拦截
+         * 可在这里进行判断方法名
+         */
         before();
         Object result = method.invoke(object, args);
         after();
