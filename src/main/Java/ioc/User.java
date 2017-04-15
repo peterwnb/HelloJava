@@ -12,6 +12,7 @@ public class User {
     }
 
     public Integer getUserID() {
+        System.out.println("User:getUserID");
         return userID;
     }
 
@@ -20,6 +21,7 @@ public class User {
     }
 
     public String getUserName() {
+        System.out.println("User:getUserName");
         return userName;
     }
 
