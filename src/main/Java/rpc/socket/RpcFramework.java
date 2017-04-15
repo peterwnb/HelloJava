@@ -1,4 +1,4 @@
-package rpc;
+package rpc.socket;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
