@@ -3,7 +3,6 @@ package nio.aiosocket;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.AsynchronousServerSocketChannel;
-import java.nio.channels.CompletionHandler;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -32,8 +31,10 @@ public class AsyncTimeServerHandler implements  Runnable {
     }
 
 
+/*
     public  void doAccpet(){
         asynchronousServerSocketChannel.accept(this,new ReadCompletionHander());
     }
+*/
 
 }
