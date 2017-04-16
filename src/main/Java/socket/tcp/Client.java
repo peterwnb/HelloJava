@@ -23,7 +23,7 @@ public class Client {
             //3.获取输入流，并读取服务器端的响应信息
             InputStream is = socket.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            String info = null;
+            String info;
             while ((info = br.readLine()) != null) {
                 System.out.println("我是客户端，服务器说：" + info);
             }

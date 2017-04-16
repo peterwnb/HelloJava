@@ -19,14 +19,15 @@ public class Server {
             int count = 0;
             System.out.println("***服务器即将启动，等待客户端的连接***");
             //循环监听等待客户端的连接
+            TimeServerHandlerExecutePool pool = new TimeServerHandlerExecutePool(100, 120);
             while (true) {
                 //调用accept()方法开始监听，等待客户端的连接
                 socket = serverSocket.accept();
-                //创建一个新的线程
+         /*       //创建一个新的线程
                 ServerThread serverThread = new ServerThread(socket);
                 //启动线程
-                serverThread.start();
-
+                serverThread.start();*/
+                pool.execute(new ServerRunable(socket));
                 count++;//统计客户端的数量
                 System.out.println("客户端的数量：" + count);
                 InetAddress address = socket.getInetAddress();
