@@ -5,23 +5,39 @@ package question;
  */
 public class Value {
 
+    public int x = 10;
+
     public static void main(String[] args) {
         UserInfo userInfo = new UserInfo();
         userInfo.setAge(20);
+
         System.out.println(userInfo.getAge());
-        UserInfo newUserInfo = new Value().getUserInfo(userInfo);
-        System.out.println(newUserInfo.getAge());
+        System.out.println(userInfo);
+        new Value().getUserInfo(userInfo);
+        System.out.println(userInfo);
+        System.out.println(userInfo.getAge());
+
+
+      /*  Value value = new Value();
+        System.out.println(value.x);
+        value.changeValue(value.x);
+        System.out.println(value.x);*/
     }
 
-    public UserInfo getUserInfo(UserInfo userInfo) {
+    public void changeValue(int x) {
+        x = 11;
+    }
+
+    public void getUserInfo(UserInfo userInfo) {
+        System.out.println(userInfo);
         userInfo = new UserInfo();
         userInfo.setAge(11);
-        return userInfo;
+        System.out.println("update :"+ userInfo);
     }
 
     static class UserInfo {
         private String name;
-        private int age;
+        private int age = 12;
 
         public String getName() {
             return name;
