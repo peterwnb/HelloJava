@@ -9,7 +9,7 @@ public class Singleton {
 
 
     private static byte[] lock = new byte[0];
-    private static Singleton singleton;
+    private volatile static Singleton singleton;
 
 
     public static Singleton getInstance(){

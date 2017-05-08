@@ -8,7 +8,7 @@ import java.util.Vector;
  */
 public class SingletonByStatic {
 
-    private static SingletonByStatic singleton;
+    private volatile static SingletonByStatic singleton;
 
 
     private SingletonByStatic() {
