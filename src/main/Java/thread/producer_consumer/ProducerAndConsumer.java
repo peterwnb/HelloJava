@@ -64,5 +64,4 @@ class Consumer implements Runnable {
             }
         }
     }
-
 }
