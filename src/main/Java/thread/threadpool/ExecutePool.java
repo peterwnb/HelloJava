@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * Created by zzqno on 2017-4-1.
  */
 public class ExecutePool {
-    private ExecutorService executorService;
+    private static ExecutorService executorService;
 
     public ExecutePool(int maxPoolSize, int queueSize) {
         executorService = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(),
@@ -23,6 +23,16 @@ public class ExecutePool {
 
     public static void main(String[] args) {
         ExecutePool executePool = new ExecutePool(50, 1000);
-        executePool.execute(()-> System.out.println(" runing"));
+        for (int i = 0; i < 10; i++) {
+            Runnable runnable = () -> {
+                try {
+                    System.out.println("running");
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            };
+            executePool.execute(runnable);
+        }
     }
 }
