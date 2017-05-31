@@ -47,7 +47,7 @@ public class JdkProxy implements InvocationHandler {
     public static void main(String[] args) {
         Hello hello = new HelloImpl();
         JdkProxy dynamicProxy = new JdkProxy(hello);
-      /*  Hello helloProxy = (Hello) Proxy.newProxyInstance(hello.getClass().getClassLoader(),hello.getClass().getInterfaces(),dynamicProxy);
+      /*  FleeceCountQuestion helloProxy = (FleeceCountQuestion) Proxy.newProxyInstance(hello.getClass().getClassLoader(),hello.getClass().getInterfaces(),dynamicProxy);
         helloProxy.say("zzq");*/
         Hello helloProxy = dynamicProxy.getProxy();
         helloProxy.say("zzq");
