@@ -11,7 +11,7 @@ public class HelloServer {
         try {
             Hello  h = new HelloImpl();
             LocateRegistry.createRegistry(12312);
-            Naming.bind("rmi://127.0.0.1:12312/Hello", h);
+            Naming.bind("rmi://127.0.0.1:12312/FleeceCountQuestion", h);
             System.out.println("HelloServer启动成功");
         } catch (Exception e) {
             e.printStackTrace();

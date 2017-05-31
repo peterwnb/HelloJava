@@ -13,7 +13,7 @@ import java.rmi.RemoteException;
 public class HelloClient {
     public static void main(String[] args) {
         try {
-            Hello h = (Hello) Naming.lookup("rmi://127.0.0.1:12312/Hello");
+            Hello h = (Hello) Naming.lookup("rmi://127.0.0.1:12312/FleeceCountQuestion");
             System.out.println(h.sayHello("zx"));
         } catch (MalformedURLException e) {
             System.out.println("url格式异常");
