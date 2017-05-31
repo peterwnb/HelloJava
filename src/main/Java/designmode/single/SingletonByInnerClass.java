@@ -6,7 +6,7 @@ package designmode.single;
 public class SingletonByInnerClass {
 
     private SingletonByInnerClass() {
-
+        System.out.println("out");
     }
 
     private static class SingletonHolder {
@@ -14,6 +14,10 @@ public class SingletonByInnerClass {
       /*  static {
             System.out.println(INSTANCE == null);
         }*/
+
+        public SingletonHolder() {
+            System.out.println("inner");
+        }
     }
 
     public static final SingletonByInnerClass getInstance() {
