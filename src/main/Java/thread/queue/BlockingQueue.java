@@ -2,6 +2,7 @@ package thread.queue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by zzqno on 2017-5-29.
@@ -55,7 +56,6 @@ public class BlockingQueue {
         blockingQueue.enqueue(10);
         blockingQueue.dequeue();
         blockingQueue.enqueue(10);
-
     }
 
 
