@@ -10,6 +10,7 @@ public class Test {
         CopyOnWriteMap map = new CopyOnWriteMap();
         map.put("1", "1");
         map.put("2", "2");
+        System.out.println(map.get("1"));
         System.out.println(map.get(null));
     }
 }
