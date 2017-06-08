@@ -5,6 +5,7 @@ package question.classinit;
  */
 public class Base
 {
+    public String whenAmISet = "set when declared";
     void preProcess() {
         System.out.println("父类方法");
     }
