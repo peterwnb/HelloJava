@@ -22,7 +22,7 @@ public class ReentrantReadWriteLockDemo {
 
 
     public void put(String k, String v) {
-        String alreadyValue = null;
+        String alreadyValue;
         //先上读锁
         readLock.lock();
         try {
@@ -49,7 +49,7 @@ public class ReentrantReadWriteLockDemo {
 
     public String get(String k) {
         readLock.lock();
-        String value = null;
+        String value;
         try {
             value = cache.get(k);
 

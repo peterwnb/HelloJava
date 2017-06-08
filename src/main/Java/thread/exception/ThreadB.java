@@ -1,5 +1,7 @@
 package thread.exception;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * Created by zzqno on 2017-2-23.
  */

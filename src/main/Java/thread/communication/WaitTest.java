@@ -4,7 +4,7 @@ package thread.communication;
  * Created by zzqno on 2017-6-4.
  * wait与Thread
  * wait 自动释放锁
- * Thread 不会
+ * sleep 不会
  */
 public class WaitTest {
 

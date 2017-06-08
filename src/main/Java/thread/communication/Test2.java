@@ -2,7 +2,7 @@ package thread.communication;
 
 /**
  * Created by zzqno on 2017-6-4.
- * wait 使用必须在同步快中调用
+ * wait 使用必须在同步块中调用
  * wait之后的代码是不会执行的
  */
 public class Test2 {
