@@ -1,8 +1,5 @@
 package proxy.dynamic;
 
-import proxy.Hello;
-import proxy.HelloImpl;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -10,6 +7,7 @@ import java.lang.reflect.Proxy;
 /**
  * Created by zzqno on 2017-3-27.
  * JDK动态代理实现
+ * 被代理的对象必须实现接口
  */
 public class JdkProxy implements InvocationHandler {
 
@@ -45,11 +43,26 @@ public class JdkProxy implements InvocationHandler {
     }
 
     public static void main(String[] args) {
-        Hello hello = new HelloImpl();
+    /*    Hello hello = new HelloImpl();
         JdkProxy dynamicProxy = new JdkProxy(hello);
-      /*  FleeceCountQuestion helloProxy = (FleeceCountQuestion) Proxy.newProxyInstance(hello.getClass().getClassLoader(),hello.getClass().getInterfaces(),dynamicProxy);
-        helloProxy.say("zzq");*/
+      *//*  FleeceCountQuestion helloProxy = (FleeceCountQuestion) Proxy.newProxyInstance(hello.getClass().getClassLoader(),hello.getClass().getInterfaces(),dynamicProxy);
+        helloProxy.say("zzq");*//*
         Hello helloProxy = dynamicProxy.getProxy();
-        helloProxy.say("zzq");
+        helloProxy.say("zzq");*/
+
+        CGlibProxy.CGlibStatiicClass cGlibStatiicClass = new CGlibProxy.CGlibStatiicClass();
+
+        JdkProxy jdkProxy = new JdkProxy(cGlibStatiicClass);
+      /*  Object proxy = jdkProxy.getProxy();
+        if(proxy instanceof CGlibProxy.CGlibStatiicClass){
+            CGlibProxy.CGlibStatiicClass proxyStaticClass = (CGlibProxy.CGlibStatiicClass) proxy;
+            proxyStaticClass.add();
+        }*/
+        Object proxy = jdkProxy.getProxy();
+        System.out.println(proxy instanceof CGlibProxy.CGlibStatiicClass );
+        System.out.println(proxy.getClass());
+
+        System.out.println(cGlibStatiicClass.getClass().getClassLoader().toString());
+        System.out.println(cGlibStatiicClass.getClass().getInterfaces().toString());
     }
 }
