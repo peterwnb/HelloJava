@@ -7,4 +7,5 @@ package callback;
 interface ComputeCallBack {
 
     void onComputeEnd();
+
 }
